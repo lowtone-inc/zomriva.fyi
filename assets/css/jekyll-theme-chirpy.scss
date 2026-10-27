@@ -1,0 +1,66 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* Spotify 색감: 검정 사이드바 + #121212 본문 + 초록 포인트 (theme_mode: dark 고정) */
+:root[data-bs-theme='dark'] {
+  --spotify-green: #1ed760;
+
+  --main-bg: #121212;
+  --main-border-color: #282828;
+  --text-color: #b3b3b3;
+  --text-muted-color: #7a7a7a;
+  --heading-color: #ffffff;
+  --link-color: var(--spotify-green);
+  --link-underline-color: rgb(30 215 96 / 35%);
+  --blockquote-border-color: var(--spotify-green);
+  --checkbox-checked-color: var(--spotify-green);
+
+  --sidebar-bg: #000000;
+  --sidebar-border-color: #000000;
+  --sidebar-active-color: #ffffff;
+  --sidebar-hover-bg: #1a1a1a;
+  --site-title-color: #ffffff;
+  --site-subtitle-color: #a7a7a7;
+
+  --topbar-bg: rgb(18 18 18 / 80%);
+  --card-bg: #181818;
+  --card-hover-bg: #282828;
+  --card-shadow: none;
+  --card-header-bg: #181818;
+  --toc-highlight: var(--spotify-green);
+  --tag-hover: rgb(30 215 96 / 18%);
+  --btn-paginator-hover-color: #282828;
+}
+
+/* 홈 글 카드: Spotify 카드처럼 호버 시 밝아짐 */
+:root[data-bs-theme='dark'] #post-list .card {
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--card-hover-bg);
+  }
+}
+
+/* 사이드바 활성 메뉴 · 페이지네이션 활성 버튼에 초록 포인트 */
+:root[data-bs-theme='dark'] #sidebar .nav-item.active .nav-link {
+  color: var(--spotify-green);
+}
+
+:root[data-bs-theme='dark'] .pagination .page-item.active .page-link {
+  background-color: var(--spotify-green);
+  color: #000000;
+}

@@ -1,6 +1,6 @@
 ---
 title: 스포티파이 같은 그라데이션 헤더 만들기
-categories: [design]
+categories: [디자인]
 description: 카테고리 색 하나로 커버 · 헤더 · 본문 배경까지 이어지는 그라데이션.
 ---
 

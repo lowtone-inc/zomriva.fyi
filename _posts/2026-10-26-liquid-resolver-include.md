@@ -1,6 +1,6 @@
 ---
 title: Liquid include 로 값 돌려받기
-categories: [dev]
+categories: [개발]
 description: 출력 대신 변수를 채워 주는 "resolver" include 패턴.
 ---
 

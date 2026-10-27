@@ -1,6 +1,6 @@
 ---
 title: 화면을 이루는 컴포넌트 한눈에 보기
-categories: [design, dev]
+categories: [디자인, 개발]
 ---
 
 화면은 몇 개 안 되는 범용 컴포넌트를 조합해 만듭니다.
