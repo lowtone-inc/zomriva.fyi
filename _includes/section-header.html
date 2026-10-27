@@ -1,0 +1,10 @@
+{%- comment -%}
+  섹션 제목 + 우측 "모두 표시" 링크
+  사용법: {% include section-header.html title="새로 올라온 글" url="/categories/" link_text="모두 표시" %}
+{%- endcomment -%}
+<div class="section-header">
+  <h2 class="section-header__title">{{ include.title }}</h2>
+  {%- if include.url -%}
+    <a class="section-header__link" href="{{ include.url | relative_url }}">{{ include.link_text | default: "모두 표시" }}</a>
+  {%- endif -%}
+</div>

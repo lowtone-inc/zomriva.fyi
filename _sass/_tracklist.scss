@@ -1,0 +1,110 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+// 트랙 목록 공통 열 구성: # | 제목 | 카테고리 | 날짜 | 시간
+@mixin track-grid {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 6fr) minmax(0, 3fr) minmax(0, 2fr) 56px;
+  gap: $space * 2;
+  align-items: center;
+  padding: 0 $space * 2;
+
+  @include mobile {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 0;
+  }
+}
+
+.tracklist {
+  &__head {
+    @include track-grid;
+    @include muted;
+    height: 36px;
+    margin-bottom: $space * 2;
+    border-bottom: 1px solid var(--color-border);
+    .icon { width: 16px; height: 16px; }
+    @include mobile { display: none; }
+  }
+
+  &__body { @include reset-list; }
+}
+
+.track {
+  @include track-grid;
+  @include hover-surface;
+  @include muted;
+  position: relative;
+  min-height: 64px;
+  border-radius: $radius-sm;
+
+  &__index {
+    position: relative;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    .icon { display: none; width: 16px; height: 16px; color: var(--color-text); }
+  }
+
+  // 호버 시 번호 → 재생 아이콘
+  &:hover &__num { display: none; }
+  &:hover &__index .icon { display: block; }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    gap: $space * 1.5;
+    min-width: 0;
+    .cover--sm { width: 40px; }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__title {
+    @include ellipsis;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+    // 행 전체를 클릭 영역으로
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__excerpt { @include ellipsis; }
+
+  // 카테고리 링크는 행 링크 위에서 따로 클릭
+  &__cats { position: relative; z-index: 1; min-width: 0; }
+
+  &__time {
+    justify-self: end;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @include mobile {
+    min-height: 56px;
+    &__index, &__cats, &__date { display: none; }
+  }
+}
+
+.tracklist__head .track__time { justify-self: end; }
+
+// ---------- 페이지 이동 ----------
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $space * 2;
+  margin-top: $space * 4;
+
+  &__link { @include pill; }
+  &__status { @include muted; }
+}

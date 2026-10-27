@@ -1,0 +1,25 @@
+{%- comment -%}
+  글 목록을 플레이리스트 트랙 목록으로 표시 (홈 · 카테고리 페이지 공용)
+  사용법: {% include post-list.html posts=paginator.posts offset=0 %}
+  - offset : 선택. 번호 시작값 보정 (페이지네이션)
+{%- endcomment -%}
+{%- if include.posts.size > 0 -%}
+{%- assign track_offset = include.offset | default: 0 -%}
+<div class="tracklist">
+  <div class="tracklist__head" aria-hidden="true">
+    <span class="track__index">#</span>
+    <span>제목</span>
+    <span class="track__cats">카테고리</span>
+    <span class="track__date">올린 날짜</span>
+    <span class="track__time">{% include icon.html name="clock" %}</span>
+  </div>
+  <ol class="tracklist__body">
+    {%- for post in include.posts -%}
+      {%- assign track_index = forloop.index | plus: track_offset -%}
+      {% include post-row.html post=post index=track_index %}
+    {%- endfor -%}
+  </ol>
+</div>
+{%- else -%}
+<p class="empty">아직 작성된 글이 없습니다.</p>
+{%- endif -%}

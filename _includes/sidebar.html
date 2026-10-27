@@ -1,0 +1,23 @@
+{%- comment -%} 데스크톱 좌측 사이드바: 브랜드 · 메뉴 / 내 라이브러리(카테고리) {%- endcomment -%}
+<aside class="sidebar">
+  <div class="sidebar__box">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand__mark" aria-hidden="true">{{ site.title | slice: 0 | upcase }}</span>
+      <span class="brand__name">{{ site.title }}</span>
+    </a>
+    {% include nav-links.html variant="sidebar" %}
+  </div>
+  <div class="sidebar__box sidebar__box--grow">
+    <h2 class="sidebar__heading">{% include icon.html name="library" %}내 라이브러리</h2>
+    <div class="library">
+      {%- for cat in site.categories -%}
+        {%- assign slug = cat | first -%}
+        {%- assign posts = cat | last -%}
+        {% include category-resolve.html slug=slug %}
+        {%- assign subtitle = '카테고리 · 글 ' | append: posts.size | append: '개' -%}
+        {%- assign is_current = false -%}{%- if page.url == cat_path -%}{%- assign is_current = true -%}{%- endif -%}
+        {% include media-row.html url=cat_url color=cat_color label=cat_name title=cat_name subtitle=subtitle active=is_current %}
+      {%- endfor -%}
+    </div>
+  </div>
+</aside>

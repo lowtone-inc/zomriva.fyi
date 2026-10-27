@@ -1,0 +1,24 @@
+{%- comment -%}
+  트랙 목록의 한 줄 (번호 · 커버+제목 · 카테고리 · 날짜 · 읽는 시간)
+  사용법: {% include post-row.html post=post index=1 %}
+  행 전체 클릭은 제목 링크의 ::after 로 처리 (카테고리 링크는 그 위에 따로 클릭됨)
+{%- endcomment -%}
+{%- assign row = include.post -%}
+{% include category-resolve.html slug=row.categories.first %}
+{% include reading-time.html post=row %}
+<li class="track">
+  <span class="track__index">
+    <span class="track__num">{{ include.index }}</span>
+    {% include icon.html name="play" %}
+  </span>
+  <span class="track__main">
+    {% include cover.html color=cat_color label=cat_name scale="sm" %}
+    <span class="track__text">
+      <a class="track__title" href="{{ row.url | relative_url }}">{{ row.title | escape }}</a>
+      <span class="track__excerpt">{{ row.description | default: row.excerpt | strip_html | truncate: 80 }}</span>
+    </span>
+  </span>
+  <span class="track__cats">{% include category-list.html categories=row.categories variant="text" %}</span>
+  <time class="track__date" datetime="{{ row.date | date_to_xmlschema }}">{{ row.date | date: "%Y. %-m. %-d." }}</time>
+  <span class="track__time">{{ read_minutes }}분</span>
+</li>

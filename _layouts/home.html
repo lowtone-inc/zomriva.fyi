@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{%- comment -%} 상단: 인사 + 카테고리 바로가기 타일 {%- endcomment -%}
+{%- capture shortcuts -%}
+<div class="shortcut-grid">
+  {%- for cat in site.categories -%}
+    {%- assign slug = cat | first -%}
+    {% include category-resolve.html slug=slug %}
+    {% include media-row.html url=cat_url color=cat_color label=cat_name title=cat_name variant="shortcut" %}
+  {%- endfor -%}
+</div>
+{%- endcapture -%}
+
+<div class="view" style="--hero: {{ site.hero_color }}">
+  {% include hero.html title="안녕하세요" description=site.description greeting="true" slot=shortcuts %}
+  <div class="view__body">
+    {{ content }}
+
+    {%- if paginator.page == 1 -%}
+    <section class="section">
+      {% include section-header.html title="새로 올라온 글" url="/categories/" link_text="카테고리 둘러보기" %}
+      <div class="card-grid">
+        {%- for post in paginator.posts limit: site.featured_count -%}
+          {% include category-resolve.html slug=post.categories.first %}
+          {%- assign card_url = post.url | relative_url -%}
+          {%- assign card_label = cat_name | default: site.title -%}
+          {%- assign card_subtitle = post.description | default: post.excerpt -%}
+          {% include media-card.html url=card_url color=cat_color label=card_label title=post.title subtitle=card_subtitle %}
+        {%- endfor -%}
+      </div>
+    </section>
+    {%- endif -%}
+
+    <section class="section">
+      {% include section-header.html title="모든 글" %}
+      {%- assign list_offset = paginator.page | minus: 1 | times: paginator.per_page -%}
+      {% include post-list.html posts=paginator.posts offset=list_offset %}
+      {% include pagination.html paginator=paginator %}
+    </section>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var el = document.querySelector("[data-greeting]");
+    if (!el) return;
+    var h = new Date().getHours();
+    el.textContent = h < 6 ? "좋은 밤이에요" : h < 12 ? "좋은 아침이에요" : h < 18 ? "좋은 오후예요" : "좋은 저녁이에요";
+  })();
+</script>

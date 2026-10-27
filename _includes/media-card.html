@@ -1,0 +1,15 @@
+{%- comment -%}
+  커버 + 제목 + 부제 카드 (그리드용). 호버 시 재생 버튼이 떠오름
+  사용법: {% include media-card.html url=... color=... label=... title=... subtitle=... %}
+  - url 은 이미 relative_url 이 적용된 값
+{%- endcomment -%}
+<a class="media-card" href="{{ include.url }}">
+  <span class="media-card__art">
+    {% include cover.html color=include.color label=include.label %}
+    {% include play-button.html scale="md" %}
+  </span>
+  <strong class="media-card__title">{{ include.title | escape }}</strong>
+  {%- if include.subtitle -%}
+    <span class="media-card__subtitle">{{ include.subtitle | strip_html | escape }}</span>
+  {%- endif -%}
+</a>

@@ -1,0 +1,11 @@
+{%- comment -%}
+  카테고리 링크
+  사용법: {% include category-link.html slug="dev" count=3 variant="pill" %}
+  - variant : pill(배지, 기본) · text(트랙 목록의 앨범 열처럼 회색 텍스트)
+  - count   : 선택. 글 개수 표시
+{%- endcomment -%}
+{% include category-resolve.html slug=include.slug %}
+<a class="category-link category-link--{{ include.variant | default: 'pill' }}" href="{{ cat_url }}">
+  {{- cat_name -}}
+  {%- if include.count -%}<span class="category-link__count">{{ include.count }}</span>{%- endif -%}
+</a>

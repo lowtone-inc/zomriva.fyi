@@ -1,0 +1,28 @@
+---
+layout: default
+---
+{%- comment -%} jekyll-archives 가 카테고리마다 이 레이아웃으로 페이지를 생성 (page.title = slug) {%- endcomment -%}
+{% include category-resolve.html slug=page.title %}
+{%- assign view_color = cat_color -%}
+{%- assign view_name = cat_name -%}
+{%- assign view_desc = cat_desc -%}
+
+{%- assign total_minutes = 0 -%}
+{%- for p in page.posts -%}
+  {% include reading-time.html post=p %}
+  {%- assign total_minutes = total_minutes | plus: read_minutes -%}
+{%- endfor -%}
+{%- assign meta = site.title | append: "|글 " | append: page.posts.size | append: "개|약 " | append: total_minutes | append: "분" -%}
+
+<div class="view" style="--hero: {{ view_color }}">
+  {% include hero.html eyebrow="카테고리" title=view_name description=view_desc cover_label=view_name color=view_color meta=meta %}
+  <div class="view__body">
+    <div class="actions">
+      {% include play-button.html url=page.posts.first.url label="최신 글 읽기" scale="lg" %}
+      <a class="actions__link" href="{{ '/categories/' | relative_url }}">전체 카테고리</a>
+    </div>
+    <section class="section">
+      {% include post-list.html posts=page.posts %}
+    </section>
+  </div>
+</div>

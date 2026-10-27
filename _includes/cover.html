@@ -1,0 +1,11 @@
+{%- comment -%}
+  색 그라데이션 커버 아트 (앨범 커버 역할)
+  사용법: {% include cover.html color="#e13300" label="개발" scale="lg" %}
+  - scale : sm(목록 썸네일, 첫 글자만) · md(카드, 기본) · lg(헤더)
+{%- endcomment -%}
+{%- assign cover_size = include.scale | default: "md" -%}
+<span class="cover cover--{{ cover_size }}" style="--cover: {{ include.color | default: site.cover_color }}" aria-hidden="true">
+  <span class="cover__label">
+    {%- if cover_size == "sm" -%}{{ include.label | slice: 0 }}{%- else -%}{{ include.label }}{%- endif -%}
+  </span>
+</span>

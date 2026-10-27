@@ -1,0 +1,67 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+// 페이지 상단 헤더: --hero 색 위에 아래로 어두워지는 그라데이션
+.hero {
+  @include gutter;
+  display: flex;
+  align-items: flex-end;
+  gap: $space * 3;
+  padding-top: $space * 10;
+  padding-bottom: $space * 3;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), var(--hero);
+
+  &__cover {
+    flex: none;
+    box-shadow: var(--shadow-cover);
+  }
+
+  &__body { min-width: 0; }
+
+  &__eyebrow {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  &__title {
+    @include display(clamp(2rem, 5vw + 1rem, 4.5rem), 900);
+    margin: $space 0 $space * 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  &__desc {
+    margin: 0 0 $space;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9375rem;
+  }
+
+  // 홈: 제목 아래에 바로가기 타일
+  &--stacked {
+    display: block;
+    padding-top: $space * 6;
+    .hero__title { font-size: 2rem; }
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: $space * 5;
+    &__cover { align-self: center; }
+  }
+}
+
+.meta-line {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+
+  li:first-child { color: var(--color-text); font-weight: 700; }
+  li + li::before {
+    content: "•";
+    margin: 0 $space * 0.5;
+  }
+}

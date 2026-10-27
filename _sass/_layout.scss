@@ -1,0 +1,218 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+// ---------- 앱 셸: 사이드바 | 메인 패널 ----------
+.app {
+  display: grid;
+  grid-template-columns: $sidebar-width minmax(0, 1fr);
+  gap: $gap;
+  height: 100vh;
+  height: 100dvh;
+  padding: $gap;
+
+  @include mobile {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+}
+
+.app-main {
+  @include panel;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include mobile {
+    min-height: 100vh;
+    padding-bottom: $bottom-nav-height;
+    border-radius: 0;
+    overflow: visible;
+  }
+}
+
+// ---------- 사이드바 ----------
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  min-height: 0;
+
+  @include mobile { display: none; }
+
+  &__box {
+    @include panel;
+    padding: $space * 1.5;
+
+    &--grow {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: $space * 1.5;
+    margin: 0 0 $space;
+    padding: $space $space * 1.5;
+    color: var(--color-muted);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: $space * 1.5;
+  padding: $space $space * 1.5 $space * 2;
+  color: var(--color-text);
+  text-decoration: none;
+
+  &__mark {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 900;
+  }
+
+  &__name {
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+}
+
+.library {
+  display: grid;
+  gap: 2px;
+}
+
+// ---------- 메뉴 (사이드바 · 모바일 하단 바 공용) ----------
+.nav {
+  display: flex;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: var(--color-muted);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s $ease;
+    &:hover, &.is-active { color: var(--color-text); }
+  }
+
+  &--sidebar {
+    flex-direction: column;
+    .nav__link {
+      gap: $space * 2.5;
+      padding: $space $space * 1.5;
+    }
+  }
+
+  &--bar {
+    justify-content: space-around;
+    .nav__link {
+      flex-direction: column;
+      gap: 2px;
+      font-size: 0.6875rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.bottom-nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding: $space * 1.5 0 calc(#{$space} + env(safe-area-inset-bottom));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9) 35%);
+
+  @include desktop { display: none; }
+}
+
+// ---------- 뷰: 헤더 색이 본문 위쪽까지 번짐 ----------
+.view {
+  --hero: var(--color-highlight);
+
+  &__body {
+    display: flow-root; // 첫 섹션 margin 이 밖으로 새지 않게
+    padding-bottom: $space * 4;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.5), var(--color-panel) 240px),
+      var(--hero);
+  }
+}
+
+.section {
+  @include gutter;
+  margin-top: $space * 4;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $space * 2;
+  margin-bottom: $space * 2;
+
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  &__link {
+    @include muted;
+    flex: none;
+    font-weight: 700;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.actions {
+  @include gutter;
+  display: flex;
+  align-items: center;
+  gap: $space * 3;
+  padding-top: $space * 3;
+
+  &__link {
+    @include link-reset;
+    @include muted;
+    font-weight: 700;
+  }
+}
+
+.site-footer {
+  @include gutter;
+  @include muted;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space * 2;
+  margin-top: $space * 5;
+  padding-top: $space * 4;
+  padding-bottom: $space * 5;
+  border-top: 1px solid var(--color-border);
+
+  p { margin: 0; }
+
+  &__link {
+    @include link-reset;
+    display: inline-flex;
+    align-items: center;
+    gap: $space * 0.5;
+    font-weight: 700;
+    .icon { width: 16px; height: 16px; }
+  }
+}

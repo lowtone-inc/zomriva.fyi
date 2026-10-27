@@ -1,0 +1,12 @@
+{%- comment -%}
+  카테고리 링크 목록
+  사용법: {% include category-list.html categories=post.categories variant="text" %}
+{%- endcomment -%}
+{%- if include.categories.size > 0 -%}
+{%- assign list_variant = include.variant | default: "pill" -%}
+<ul class="category-list category-list--{{ list_variant }}">
+  {%- for slug in include.categories -%}
+    <li>{% include category-link.html slug=slug variant=list_variant %}</li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}

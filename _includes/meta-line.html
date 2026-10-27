@@ -1,0 +1,11 @@
+{%- comment -%}
+  "•" 로 구분되는 메타 정보 한 줄
+  사용법: {% include meta-line.html items="LOWTONE|2026. 10. 27.|3분 읽기" %}
+  - 첫 항목은 굵게 표시
+{%- endcomment -%}
+{%- assign meta_items = include.items | split: "|" -%}
+{%- if meta_items.size > 0 -%}
+<ul class="meta-line">
+  {%- for item in meta_items -%}<li>{{ item }}</li>{%- endfor -%}
+</ul>
+{%- endif -%}

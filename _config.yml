@@ -1,0 +1,72 @@
+# ---------------------------------------------------------------
+# 사이트 기본 정보
+# ---------------------------------------------------------------
+title: zomriva
+description: 플레이리스트처럼 골라 듣듯 읽는 블로그
+author: LOWTONE
+lang: ko-KR
+timezone: Asia/Seoul
+
+# GitHub Pages 주소: https://zomriva.fyi
+# (Actions 배포 시 baseurl 은 워크플로에서 자동으로 덮어씀)
+url: "https://zomriva.fyi"
+baseurl: ""
+
+# 카테고리 색이 없을 때 쓰는 기본 커버 · 홈 헤더 색
+cover_color: "#535353"
+hero_color: "#1e3264"
+
+# 홈 상단 "새로 올라온 글" 카드 수
+featured_count: 5
+
+# ---------------------------------------------------------------
+# 빌드 설정
+# ---------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 홈 페이지네이션 (index.html 에만 적용)
+paginate: 10
+paginate_path: /page/:num/
+
+# 카테고리별 아카이브 페이지 자동 생성 → /category/<slug>/
+jekyll-archives:
+  enabled:
+    - categories
+  layout: category
+  permalinks:
+    category: /category/:name/
+
+# 모든 글에 기본 레이아웃 적용
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

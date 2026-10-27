@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{%- comment -%} 일반 페이지. front matter `prose: false` 면 본문 서식 없이 출력 {%- endcomment -%}
+<div class="view" style="--hero: {{ page.color | default: site.cover_color }}">
+  {% include hero.html eyebrow="페이지" title=page.title description=page.description %}
+  <div class="view__body">
+    <div class="section{% unless page.prose == false %} prose{% endunless %}">
+      {{ content }}
+    </div>
+  </div>
+</div>

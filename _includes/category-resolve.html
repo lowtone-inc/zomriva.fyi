@@ -1,0 +1,17 @@
+{%- comment -%}
+  카테고리 slug → 표시 정보 변환 (이 계산을 하는 유일한 곳)
+  사용법: {% include category-resolve.html slug="dev" %}
+  출력 없이 아래 변수를 호출한 쪽에 채워 줌 (Liquid assign 은 전역)
+  - cat_name  : 표시 이름 (없으면 slug)
+  - cat_color : 커버 색 (없으면 site.cover_color)
+  - cat_desc  : 설명
+  - cat_path  : baseurl 없는 경로 (/category/dev/) → page.url 비교용
+  - cat_url   : 링크용 전체 경로
+{%- endcomment -%}
+{%- assign cat_meta = site.data.categories[include.slug] -%}
+{%- assign cat_name = cat_meta.name | default: include.slug -%}
+{%- assign cat_color = cat_meta.color | default: site.cover_color -%}
+{%- assign cat_desc = cat_meta.description -%}
+{%- assign cat_slug = include.slug | slugify -%}
+{%- assign cat_path = '/category/' | append: cat_slug | append: '/' -%}
+{%- assign cat_url = cat_path | relative_url -%}

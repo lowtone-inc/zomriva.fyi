@@ -1,0 +1,13 @@
+# 사이드바 · 모바일 하단 메뉴. url 은 baseurl 기준 상대 경로
+# icon  : _includes/icon.html 의 name
+# match : 선택. page.url 에 이 문자열이 포함되면 활성 표시
+- title: 홈
+  url: /
+  icon: home
+- title: 카테고리
+  url: /categories/
+  icon: browse
+  match: /categor
+- title: 소개
+  url: /about/
+  icon: info
