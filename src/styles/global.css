@@ -1,0 +1,90 @@
+/* Chirpy 다크 + Spotify 팔레트 (#121212 / #1ed760) */
+:root {
+  --c-accent: #1ed760;
+  --c-accent-dim: rgb(30 215 96 / 18%);
+  --c-bg: #121212;
+  --c-sidebar: #000000;
+  --c-card: #181818;
+  --c-card-hover: #282828;
+  --c-border: #282828;
+  --c-text: #b3b3b3;
+  --c-muted: #7a7a7a;
+  --c-heading: #ffffff;
+
+  --font-sans: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius: 8px;
+  --sidebar-w: 260px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { color-scheme: dark; scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+h1, h2, h3, h4 { color: var(--c-heading); line-height: 1.35; }
+::selection { background: var(--c-accent); color: #000; }
+
+.page-title { margin: 0 0 24px; font-size: 1.8rem; }
+.muted { color: var(--c-muted); font-size: 0.85rem; }
+
+/* 태그 칩 */
+.chip {
+  display: inline-block;
+  padding: 0 10px;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+.chip:hover { background: var(--c-accent-dim); color: var(--c-accent); }
+
+/* 목록 (카테고리/아카이브) */
+.plain-list { margin: 0; padding: 0; list-style: none; }
+.plain-list li { padding: 8px 0; border-bottom: 1px solid var(--c-border); }
+.plain-list a:hover { color: var(--c-accent); }
+
+/* 본문 타이포 */
+.prose { font-size: 1.02rem; color: var(--c-text); overflow-wrap: anywhere; }
+.prose h2 { margin-top: 2.2em; padding-bottom: 6px; border-bottom: 1px solid var(--c-border); font-size: 1.5rem; }
+.prose h3 { margin-top: 1.8em; font-size: 1.25rem; }
+.prose a { color: var(--c-accent); border-bottom: 1px solid var(--c-accent-dim); }
+.prose a:hover { border-color: var(--c-accent); }
+.prose strong { color: var(--c-heading); }
+.prose blockquote {
+  margin: 1.5em 0;
+  padding: 0.6em 1.2em;
+  background: var(--c-card);
+  border-left: 4px solid var(--c-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.prose blockquote > :first-child { margin-top: 0; }
+.prose blockquote > :last-child { margin-bottom: 0; }
+.prose code { font-family: var(--font-mono); font-size: 0.9em; }
+.prose :not(pre) > code {
+  padding: 0.15em 0.4em;
+  background: var(--c-card-hover);
+  border-radius: 4px;
+  color: var(--c-heading);
+}
+.prose pre {
+  padding: 1em 1.2em;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+.prose table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+.prose th, .prose td { padding: 0.5em 0.8em; border-bottom: 1px solid var(--c-border); text-align: left; }
+.prose th { color: var(--c-heading); }
+.prose hr { border: 0; border-top: 1px solid var(--c-border); margin: 3em 0; }

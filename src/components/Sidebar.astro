@@ -1,0 +1,101 @@
+---
+import { SITE, NAV_LINKS, SOCIAL_LINKS } from '@/config';
+import { withBase, isActive } from '@/lib/url';
+
+const current = Astro.url.pathname;
+---
+
+<aside class="sidebar">
+  <a href={withBase('/')} class="brand">
+    <span class="title">{SITE.title}</span>
+    <span class="tagline">{SITE.tagline}</span>
+  </a>
+  <nav aria-label="주 메뉴">
+    {
+      NAV_LINKS.map((link) => (
+        <a href={withBase(link.href)} class:list={['nav-link', { active: isActive(current, link.href) }]}>
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="social">
+    {SOCIAL_LINKS.map((link) => <a href={link.href.startsWith('http') ? link.href : withBase(link.href)}>{link.label}</a>)}
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    width: var(--sidebar-w);
+    padding: 40px 0 24px;
+    background: var(--c-sidebar);
+  }
+  .brand {
+    display: block;
+    padding: 0 28px 32px;
+  }
+  .title {
+    display: block;
+    color: var(--c-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+  .tagline {
+    display: block;
+    color: #a7a7a7;
+    font-size: 0.85rem;
+  }
+  nav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 12px;
+  }
+  .nav-link {
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    font-weight: 700;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .nav-link:hover {
+    background: #1a1a1a;
+    color: var(--c-heading);
+  }
+  .nav-link.active {
+    color: var(--c-accent);
+  }
+  .social {
+    display: flex;
+    gap: 16px;
+    padding: 0 28px;
+    font-size: 0.8rem;
+  }
+  .social a:hover {
+    color: var(--c-accent);
+  }
+
+  @media (max-width: 900px) {
+    .sidebar {
+      position: static;
+      width: 100%;
+      padding: 16px 0 8px;
+    }
+    .brand {
+      padding: 0 16px 8px;
+    }
+    nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0 8px;
+    }
+    .social {
+      display: none;
+    }
+  }
+</style>

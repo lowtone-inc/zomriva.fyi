@@ -1,0 +1,24 @@
+---
+import { tagUrl } from '@/lib/url';
+
+export interface Props {
+  tags: readonly string[];
+}
+
+const { tags } = Astro.props;
+---
+
+<ul class="tags">
+  {tags.map((tag) => <li><a class="chip" href={tagUrl(tag)}>{tag}</a></li>)}
+</ul>
+
+<style>
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>

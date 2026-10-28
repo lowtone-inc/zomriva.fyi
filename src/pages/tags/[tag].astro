@@ -1,0 +1,18 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostList from '@/components/PostList.astro';
+import { getTagGroups } from '@/lib/posts';
+
+export const getStaticPaths = (async () => {
+  const groups = await getTagGroups();
+  return groups.map((group) => ({ params: { tag: group.slug }, props: { group } }));
+}) satisfies GetStaticPaths;
+
+const { group } = Astro.props;
+---
+
+<BaseLayout title={`태그: ${group.name}`} crumbs={['태그', group.name]}>
+  <h1 class="page-title">{group.name} <span class="muted">{group.posts.length}</span></h1>
+  <PostList posts={group.posts} />
+</BaseLayout>

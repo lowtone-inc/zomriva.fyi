@@ -1,0 +1,75 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import Sidebar from '@/components/Sidebar.astro';
+import Topbar from '@/components/Topbar.astro';
+import { SITE } from '@/config';
+import type { ArticleMeta } from '@/components/BaseHead.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  article?: ArticleMeta;
+  noindex?: boolean;
+  crumbs?: string[];
+}
+
+const { title, description, article, noindex, crumbs } = Astro.props;
+---
+
+<!doctype html>
+<html lang={SITE.locale.split('-')[0]}>
+  <head>
+    <BaseHead title={title} description={description} article={article} noindex={noindex} />
+  </head>
+  <body>
+    <Sidebar />
+    <div class="wrap">
+      <Topbar crumbs={crumbs} />
+      <div class="body">
+        <main>
+          <slot />
+        </main>
+        <slot name="aside" />
+      </div>
+      <footer>
+        <p>© {new Date().getFullYear()} {SITE.author}.</p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  .wrap {
+    min-height: 100vh;
+    margin-left: var(--sidebar-w);
+  }
+  .body {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 40px 24px;
+  }
+  main {
+    flex: 1;
+    min-width: 0;
+  }
+  footer {
+    padding: 24px;
+    border-top: 1px solid var(--c-border);
+    color: var(--c-muted);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  footer p {
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .wrap {
+      margin-left: 0;
+    }
+    .body {
+      padding: 24px 16px;
+    }
+  }
+</style>

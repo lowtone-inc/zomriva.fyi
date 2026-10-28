@@ -1,0 +1,54 @@
+---
+import { formatDate, isoDate, readingTime } from '@/lib/format';
+import { postUrl } from '@/lib/url';
+import type { Post } from '@/lib/posts';
+
+export interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, category } = post.data;
+---
+
+<a href={postUrl(post.id)} class="card">
+  <h2>{title}</h2>
+  <p class="desc">{description}</p>
+  <p class="meta">
+    <time datetime={isoDate(pubDate)}>{formatDate(pubDate)}</time>
+    <span>· {category}</span>
+    <span>· {readingTime(post.body)} 읽기</span>
+  </p>
+</a>
+
+<style>
+  .card {
+    display: block;
+    padding: 20px 24px;
+    background: var(--c-card);
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+  }
+  .card:hover {
+    background: var(--c-card-hover);
+  }
+  h2 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+  }
+  .card:hover h2 {
+    color: var(--c-accent);
+  }
+  .desc {
+    margin: 0 0 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .meta {
+    margin: 0;
+    color: var(--c-muted);
+    font-size: 0.8rem;
+  }
+</style>

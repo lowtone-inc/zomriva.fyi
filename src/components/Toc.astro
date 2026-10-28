@@ -1,0 +1,60 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+export interface Props {
+  headings: MarkdownHeading[];
+}
+
+const items = Astro.props.headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+{
+  items.length > 0 && (
+    <aside class="toc">
+      <p class="label">이 글의 목차</p>
+      <ul>
+        {items.map((h) => (
+          <li class:list={{ sub: h.depth === 3 }}>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}
+
+<style>
+  .toc {
+    position: sticky;
+    top: 96px;
+    align-self: flex-start;
+    width: 220px;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+  }
+  .label {
+    margin: 0 0 8px;
+    color: var(--c-heading);
+    font-weight: 700;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-left: 1px solid var(--c-border);
+  }
+  li {
+    padding: 4px 0 4px 14px;
+  }
+  .sub {
+    padding-left: 28px;
+  }
+  a:hover {
+    color: var(--c-accent);
+  }
+  @media (max-width: 1100px) {
+    .toc {
+      display: none;
+    }
+  }
+</style>

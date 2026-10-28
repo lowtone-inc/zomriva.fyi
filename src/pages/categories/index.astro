@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCategoryGroups } from '@/lib/posts';
+import { categoryUrl, postUrl } from '@/lib/url';
+
+const groups = await getCategoryGroups();
+---
+
+<BaseLayout title="카테고리" crumbs={['카테고리']}>
+  <h1 class="page-title">카테고리</h1>
+  {
+    groups.map((group) => (
+      <section>
+        <h2>
+          <a href={categoryUrl(group.name)}>{group.name}</a>
+          <span class="muted">{group.posts.length}</span>
+        </h2>
+        <ul class="plain-list">
+          {group.posts.map((post) => (
+            <li><a href={postUrl(post.id)}>{post.data.title}</a></li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</BaseLayout>
+
+<style>
+  h2 {
+    margin: 32px 0 8px;
+    font-size: 1.3rem;
+  }
+  h2 a:hover {
+    color: var(--c-accent);
+  }
+</style>
