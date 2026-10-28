@@ -1,0 +1,25 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostList from '@/components/PostList.astro';
+import Pagination from '@/components/Pagination.astro';
+import { SITE } from '@/config';
+import { getPosts } from '@/lib/posts';
+
+// 1페이지는 /, 2페이지부터 /page2/ (Chirpy와 동일한 URL)
+export const getStaticPaths = (async () => {
+  const posts = await getPosts();
+  const total = Math.max(1, Math.ceil(posts.length / SITE.postsPerPage));
+  return Array.from({ length: total }, (_, i) => ({
+    params: { page: i === 0 ? undefined : `page${i + 1}` },
+    props: { current: i + 1, total, posts: posts.slice(i * SITE.postsPerPage, (i + 1) * SITE.postsPerPage) },
+  }));
+}) satisfies GetStaticPaths;
+
+const { current, total, posts } = Astro.props;
+---
+
+<BaseLayout>
+  <PostList posts={posts} />
+  <Pagination current={current} total={total} />
+</BaseLayout>

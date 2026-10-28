@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getYearGroups } from '@/lib/posts';
+import { monthDayOf } from '@/lib/format';
+import { postUrl } from '@/lib/url';
+
+const years = await getYearGroups();
+---
+
+<BaseLayout title="아카이브" crumbs={['아카이브']}>
+  <h1 class="page-title">아카이브</h1>
+  {
+    years.map(({ year, posts }) => (
+      <section>
+        <h2>{year} <span class="muted">{posts.length}</span></h2>
+        <ul class="plain-list">
+          {posts.map((post) => (
+            <li>
+              <span class="date">{monthDayOf(post.data.pubDate)}</span>
+              <a href={postUrl(post.id)}>{post.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</BaseLayout>
+
+<style>
+  h2 {
+    margin: 32px 0 8px;
+    font-size: 1.3rem;
+  }
+  .date {
+    display: inline-block;
+    width: 56px;
+    color: var(--c-muted);
+    font-size: 0.85rem;
+  }
+</style>

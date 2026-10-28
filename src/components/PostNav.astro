@@ -1,0 +1,70 @@
+---
+import { postUrl } from '@/lib/url';
+import type { Post } from '@/lib/posts';
+
+export interface Props {
+  newer?: Post;
+  older?: Post;
+}
+
+const { newer, older } = Astro.props;
+---
+
+{
+  (newer || older) && (
+    <nav class="post-nav" aria-label="이전/다음 글">
+      {older ? (
+        <a href={postUrl(older.id)}>
+          <span class="label">이전 글</span>
+          <span class="title">{older.data.title}</span>
+        </a>
+      ) : <span />}
+      {newer && (
+        <a href={postUrl(newer.id)} class="next">
+          <span class="label">다음 글</span>
+          <span class="title">{newer.data.title}</span>
+        </a>
+      )}
+    </nav>
+  )
+}
+
+<style>
+  .post-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  a {
+    padding: 16px 20px;
+    background: var(--c-card);
+    border-radius: var(--radius);
+    transition: background-color 0.2s;
+  }
+  a:hover {
+    background: var(--c-card-hover);
+  }
+  .next {
+    grid-column: 2;
+    text-align: right;
+  }
+  .label {
+    display: block;
+    color: var(--c-muted);
+    font-size: 0.75rem;
+  }
+  .title {
+    display: block;
+    color: var(--c-heading);
+    font-weight: 700;
+  }
+  @media (max-width: 600px) {
+    .post-nav {
+      grid-template-columns: 1fr;
+    }
+    .next {
+      grid-column: 1;
+    }
+  }
+</style>

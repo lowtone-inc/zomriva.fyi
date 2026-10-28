@@ -1,0 +1,56 @@
+---
+import { SITE } from '@/config';
+import { withBase } from '@/lib/url';
+
+export interface Props {
+  // 현재 위치 (홈 이후 경로)
+  crumbs?: string[];
+}
+
+const { crumbs = [] } = Astro.props;
+---
+
+<header class="topbar">
+  <nav class="crumbs" aria-label="breadcrumb">
+    <a href={withBase('/')}>{crumbs.length ? '홈' : SITE.title}</a>
+    {crumbs.map((c) => <span><span class="sep">/</span>{c}</span>)}
+  </nav>
+</header>
+
+<style>
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 56px;
+    background: rgb(18 18 18 / 80%);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .crumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+    padding-inline: 24px;
+    font-size: 0.9rem;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .crumbs > span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sep {
+    margin-right: 8px;
+    color: var(--c-muted);
+  }
+  a:hover {
+    color: var(--c-accent);
+  }
+  @media (max-width: 900px) {
+    .topbar {
+      position: static;
+    }
+  }
+</style>
