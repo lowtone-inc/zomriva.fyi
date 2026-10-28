@@ -11,7 +11,7 @@ export const SITE = {
 
 // 서치콘솔 소유 확인 코드. 값이 있을 때만 meta 태그를 출력한다.
 export const SITE_VERIFICATION = {
-  google: '',
+  google: 'Bg_w1txQnl5WSpx_dgiiZ0r8Qzpg7NqPSqQDdKfWzUE',
   naver: 'e3b67000cff372fafb031a8544fdf0be5c232c46',
 } as const;
 
