@@ -1,0 +1,104 @@
+---
+title: '사주마을 능면승 총정리, 전 여덟 편 리포트 직접 받아보니'
+description: '사주마을 능면승 총정리. 컨셉, 이용 방법, 전 여덟 편 리포트 구성, 실제로 받아본 내용과 참고할 점까지.'
+pubDate: 2026-11-05T10:20:00+09:00
+category: 일상
+tags: ['사주마을', '능면승', '능면승사주', '온라인사주', '사주총정리', '사주사이트추천']
+featured: false
+draft: false
+---
+요즘 사주는 철학관보다 휴대폰으로 먼저 보는 시대입니다
+
+그중 사주마을 능면승은 조금 다릅니다\
+결과를 보여주기 전에 사극 이야기 한 편부터 시작합니다
+
+그렇다면 실제 리포트는 얼마나 구체적일까요
+
+오늘은 능면승의 컨셉부터 리포트 구성, 받아본 내용, 참고할 점까지 정리해보겠습니다
+
+목차\
+1 능면승이란\
+2 이용 방법\
+3 전 여덟 편, 무엇이 들어 있나\
+4 실제로 받아본 내용\
+5 이용할 때 참고할 점\
+6 총평
+
+## 1 능면승이란
+
+사주마을의 능면승은 세종 25년\
+천기누설의 죄로 얼굴에 낙인이 찍힌 승려라는 설정의 사주 콘텐츠입니다
+
+자자형, 즉 얼굴에 먹물로 죄명을 새기던 형벌을 받은 인물의 풀이법이라는 세계관으로 진행됩니다\
+"등장인물과 일부 사건은 창작입니다"라는 안내도 함께 나옵니다
+
+<div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;min-height:240px;margin:1.5rem 0;border:2px dashed currentColor;border-radius:12px;opacity:.45;font-size:.95rem;">이미지 들어갈 자리</div>
+
+<div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;min-height:240px;margin:1.5rem 0;border:2px dashed currentColor;border-radius:12px;opacity:.45;font-size:.95rem;">이미지 들어갈 자리</div>
+
+## 2 이용 방법
+
+성별 → 이름 → 생년월일 → 태어난 시 → 이메일 순서입니다\
+각 단계를 스님의 대사로 묻는 대화형이고\
+생년월일은 양력, 음력, 윤달을 고를 수 있습니다\
+결과는 화면으로 보고 서찰, 즉 이메일로도 받을 수 있습니다
+
+<div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;min-height:240px;margin:1.5rem 0;border:2px dashed currentColor;border-radius:12px;opacity:.45;font-size:.95rem;">이미지 들어갈 자리</div>
+
+## 3 전 여덟 편, 무엇이 들어 있나
+
+| 편 | 제목 | 주요 내용 |
+| --- | --- | --- |
+| 一 | 타고난 그릇 | 기질, 쓰일 자리, 강점과 약점, 본모습 |
+| 二 | 오행의 빈자리 | 넘치는 기운과 모자란 기운, 색·방향·습관 |
+| 三 | 그대란 사람 | 남들이 보는 나, 그림자, 무너지는 순간 |
+| 四 | 그대에게 올 사람 | 머물 사람의 성정, 만나는 시기, 피할 사람 |
+| 五 | 재물의 문 | 돈이 드는 문, 새는 구멍, 돈 버릇 |
+| 六 | 일과 이름 | 빛나는 자리, 맞지 않는 자리, 함께 일할 사람 |
+| 七 | 그대의 때 | 대운, 올해 달별 흐름, 움직일 때와 멈출 때 |
+| 八 | 얼굴의 글자와 처방 | 신살, 다루는 법, 능면승의 마지막 편지 |
+
+## 4 실제로 받아본 내용
+
+<div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;min-height:240px;margin:1.5rem 0;border:2px dashed currentColor;border-radius:12px;opacity:.45;font-size:.95rem;">이미지 들어갈 자리</div>
+
+제 오행은 금2 목0 수3 토2 화1이었습니다\
+리포트는 목이 비어 있으니 시작을 작게 정하고 반복으로 키우는 장치가 필요하다고 풀이합니다
+
+올해 달별 흐름도 구체적입니다\
+11월은 생각이 길어질 수 있으니 혼자 결론 내리기보다 필요한 사람과 일정을 맞추라고 하고\
+12월은 연락과 약속을 다시 확인하라고 합니다
+
+<div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;min-height:240px;margin:1.5rem 0;border:2px dashed currentColor;border-radius:12px;opacity:.45;font-size:.95rem;">이미지 들어갈 자리</div>
+
+<div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;min-height:240px;margin:1.5rem 0;border:2px dashed currentColor;border-radius:12px;opacity:.45;font-size:.95rem;">이미지 들어갈 자리</div>
+
+마지막 편에서는 명식에 성립하는 신살을 짚습니다\
+저는 원진살이 나왔고, 말하지 않은 기대가 쌓이면 작은 일도 크게 느껴질 수 있다는 해석이었습니다
+
+## 5 이용할 때 참고할 점
+
+배경음과 효과음이 있어 공공장소에서는 소리를 끄는 게 좋습니다\
+분량이 많아 한 번에 읽기보다 편별로 나눠 읽는 편이 낫습니다
+
+결과는 운명을 확정하는 답이라기보다 나를 돌아보는 참고 자료로 보는 게 적절합니다\
+리포트 스스로도 "명식은 그대의 선택을 대신하지 못하오"라고 말합니다
+
+## 6 총평
+
+| 구분 | 일반 온라인 사주 | 능면승 |
+| --- | --- | --- |
+| 진행 방식 | 정보 입력 후 결과 | 대화형 스토리 |
+| 결과 표현 | 명리 용어 중심 | 사극체 대사와 근거 설명 |
+| 분량 | 서비스마다 다름 | 전 여덟 편 |
+| 처방 | 서비스마다 다름 | 색·방향·습관, 돈 관리 순서 |
+
+능면승의 경쟁력은 사주 내용 자체보다 그것을 전달하는 방식에 있다고 봅니다\
+그러면서도 오행 개수 같은 근거를 빼먹지 않아서 설명이 허공에 뜨지 않습니다
+
+생각이 많은 시기라면 결과를 믿기보다\
+내가 어떤 사람인지 점검하는 용도로 활용해보시길 추천합니다
+
+<https://saju-maeul.kr/saju/app/monk/intro>
+
+\#사주마을 \#능면승 \#능면승사주 \#온라인사주 \#사주총정리 \#사주사이트추천
