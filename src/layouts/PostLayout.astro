@@ -16,13 +16,13 @@ export interface Props {
 }
 
 const { post, headings, newer, older } = Astro.props;
-const { title, description, tags, category, pubDate, updatedDate } = post.data;
+const { title, description, image, tags, category, pubDate, updatedDate } = post.data;
 ---
 
 <BaseLayout
   title={title}
   description={description}
-  article={{ publishedTime: pubDate, modifiedTime: updatedDate, tags }}
+  image={image} article={{ publishedTime: pubDate, modifiedTime: updatedDate, tags }}
   crumbs={[category, title]}
 >
   <article>

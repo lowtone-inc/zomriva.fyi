@@ -1,8 +1,8 @@
 export const SITE = {
   title: 'zomriva',
-  tagline: 'LOWTONE 팀 블로그',
-  description: '개발 · 디자인 · 일상 이야기를 기록하는 LOWTONE 팀 블로그.',
-  author: 'LOWTONE',
+  tagline: '일상을 기록하는 블로그',
+  description: '개발 · 디자인 · 일상 이야기를 기록하는 블로그.',
+  author: 'zomriva',
   locale: 'ko-KR',
   postsPerPage: 10,
   // 글별 이미지가 없을 때 쓰는 공유 이미지 (public/ 기준 경로)

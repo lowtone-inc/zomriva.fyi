@@ -1,6 +1,7 @@
 ---
 title: '사주마을 능면승 총정리, 전 여덟 편 리포트 직접 받아보니'
 description: '사주마을 능면승 총정리. 컨셉, 이용 방법, 전 여덟 편 리포트 구성, 실제로 받아본 내용과 참고할 점까지.'
+image: /images/saju-maeul-neungmyeonseung-guide/01.jpg
 pubDate: 2026-11-05T10:20:00+09:00
 category: 일상
 tags: ['사주마을', '능면승', '능면승사주', '온라인사주', '사주총정리', '사주사이트추천']
