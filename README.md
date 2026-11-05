@@ -1,6 +1,6 @@
 # zomriva.fyi
 
-LOWTONE 팀 블로그. Astro 5 정적 사이트 (Chirpy 스타일 + Spotify 다크 팔레트). → https://zomriva.fyi
+zomriva 블로그. Astro 5 정적 사이트 (Chirpy 스타일 + Spotify 다크 팔레트). → https://zomriva.fyi
 
 ## 실행
 

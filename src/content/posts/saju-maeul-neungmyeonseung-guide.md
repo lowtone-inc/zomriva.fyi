@@ -33,9 +33,9 @@ draft: false
 자자형, 즉 얼굴에 먹물로 죄명을 새기던 형벌을 받은 인물의 풀이법이라는 세계관으로 진행됩니다\
 "등장인물과 일부 사건은 창작입니다"라는 안내도 함께 나옵니다
 
-![능면승 자자형](/images/saju-maeul-neungmyeonseung-guide/01.jpg)
+<img src="/images/saju-maeul-neungmyeonseung-guide/01.jpg" alt="사주마을 능면승 자자형" width="800" height="1142" decoding="async" />
 
-![능면승 능면승 풀이법](/images/saju-maeul-neungmyeonseung-guide/02.jpg)
+<img src="/images/saju-maeul-neungmyeonseung-guide/02.jpg" alt="사주마을 능면승 능면승 풀이법" width="800" height="1142" loading="lazy" decoding="async" />
 
 ## 2 이용 방법
 
@@ -44,7 +44,7 @@ draft: false
 생년월일은 양력, 음력, 윤달을 고를 수 있습니다\
 결과는 화면으로 보고 서찰, 즉 이메일로도 받을 수 있습니다
 
-![능면승 정보입력](/images/saju-maeul-neungmyeonseung-guide/03.jpg)
+<img src="/images/saju-maeul-neungmyeonseung-guide/03.jpg" alt="사주마을 능면승 정보입력" width="800" height="1142" loading="lazy" decoding="async" />
 
 ## 3 전 여덟 편, 무엇이 들어 있나
 
@@ -61,7 +61,7 @@ draft: false
 
 ## 4 실제로 받아본 내용
 
-![능면승 여덟글자 오행](/images/saju-maeul-neungmyeonseung-guide/04.jpg)
+<img src="/images/saju-maeul-neungmyeonseung-guide/04.jpg" alt="사주마을 능면승 여덟글자 오행" width="720" height="1142" loading="lazy" decoding="async" />
 
 제 오행은 금2 목0 수3 토2 화1이었습니다\
 리포트는 목이 비어 있으니 시작을 작게 정하고 반복으로 키우는 장치가 필요하다고 풀이합니다
@@ -70,9 +70,9 @@ draft: false
 11월은 생각이 길어질 수 있으니 혼자 결론 내리기보다 필요한 사람과 일정을 맞추라고 하고\
 12월은 연락과 약속을 다시 확인하라고 합니다
 
-![능면승 얼굴의 글자와 처방](/images/saju-maeul-neungmyeonseung-guide/05.jpg)
+<img src="/images/saju-maeul-neungmyeonseung-guide/05.jpg" alt="사주마을 능면승 얼굴의 글자와 처방" width="720" height="1142" loading="lazy" decoding="async" />
 
-![능면승 얼굴의 글자와 처방](/images/saju-maeul-neungmyeonseung-guide/06.jpg)
+<img src="/images/saju-maeul-neungmyeonseung-guide/06.jpg" alt="사주마을 능면승 얼굴의 글자와 처방" width="720" height="1142" loading="lazy" decoding="async" />
 
 마지막 편에서는 명식에 성립하는 신살을 짚습니다\
 저는 원진살이 나왔고, 말하지 않은 기대가 쌓이면 작은 일도 크게 느껴질 수 있다는 해석이었습니다
