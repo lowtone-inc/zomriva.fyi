@@ -1,7 +1,7 @@
 export const SITE = {
   title: 'zomriva',
   tagline: '일상을 기록하는 블로그',
-  description: '개발 · 디자인 · 일상 이야기를 기록하는 블로그.',
+  description: '일상 이야기를 기록하는 블로그.',
   author: 'zomriva',
   locale: 'ko-KR',
   postsPerPage: 10,
